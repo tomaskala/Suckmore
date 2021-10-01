@@ -1,0 +1,28 @@
+include ~/.config/sway/config.d/general.conf
+include ~/.config/sway/config.d/colorscheme.conf
+include ~/.config/sway/config.d/bindings.conf
+include ~/.config/sway/config.d/status.conf
+include ~/.config/sway/config.d/output.conf
+include /etc/sway/config.d/*
+
+# TODO
+# * fix discord on wayland (and other apps) -- seems impossible atm?
+# * bar: telegram sits there, even if mod+shift+c'd
+# * test hdmi and set the max available resolution there
+# * dmenu
+# * passmenu
+# * sfeed - drop it from the suckless repo
+# * notifications
+# * image viewer
+# * pinentry
+# * sudo askpass
+# * app launchers
+#   * calc: alacritty --class calc -e bc -l -q
+#   * vimwiki
+#   * neomutt
+#   * cmus
+#   * rssfeed
+#   * passmenu
+#   * sfeed_update
+# * print screen
+# * print screen with selection
