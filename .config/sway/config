@@ -17,10 +17,6 @@ include /etc/sway/config.d/*
 # * pinentry
 # * sudo askpass
 # * app launchers
-#   * calc: alacritty --class calc -e bc -l -q
-#   * vimwiki
-#   * neomutt
-#   * cmus
 #   * rssfeed
 #   * passmenu
 #   * sfeed_update
