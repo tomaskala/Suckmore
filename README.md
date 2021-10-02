@@ -6,7 +6,7 @@ My Wayland-based environment setup.
 ## Environment
 
 ```
-$ sudo pacman -S sway swaylock alacritty brightnessctl wl-clipboard
+$ sudo pacman -S sway swaylock alacritty brightnessctl wl-clipboard grim slurp
 ```
 
 

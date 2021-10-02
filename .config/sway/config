@@ -20,5 +20,3 @@ include /etc/sway/config.d/*
 #   * rssfeed
 #   * passmenu
 #   * sfeed_update
-# * print screen
-# * print screen with selection
