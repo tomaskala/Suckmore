@@ -13,7 +13,7 @@ $ sudo pacman -S sway swaylock alacritty brightnessctl wl-clipboard grim slurp
 ## Pipewire
 
 ```
-$ sudo pacman -S pipewire pipewire-pulse
+$ sudo pacman -S pipewire pipewire-pulse pamixer
 ```
 
 
