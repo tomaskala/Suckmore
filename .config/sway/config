@@ -7,9 +7,9 @@ include /etc/sway/config.d/*
 
 # TODO
 # * fix discord on wayland (and other apps) -- seems impossible atm?
-# * bar: telegram sits there, even if mod+shift+c'd
-#   * reset it on volume change
-# * xprofile, in particular set the volume!
+# * xprofile
+#   * set the volume!
+#   * run the ssh agent
 # * test hdmi and set the max available resolution there
 # * keybinds to send a workspace to another output
 # * dmenu
