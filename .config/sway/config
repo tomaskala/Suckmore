@@ -17,6 +17,7 @@ include /etc/sway/config.d/*
 # * notifications
 # * image viewer
 # * pinentry
+#   * open a floating terminal with the tty pinentry?
 # * sudo askpass
 # * app launchers
 #   * rssfeed
