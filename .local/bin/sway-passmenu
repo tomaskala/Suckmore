@@ -1,0 +1,6 @@
+#!/bin/sh
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+path=$(find "${prefix}/" -name "*.gpg" | \
+  sed 's@.*/password-store/\(.*\)\.gpg@\1@' | sway-launcher)
+[ -n "${path}" ] && pass -c "${path}"
