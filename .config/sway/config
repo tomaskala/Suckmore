@@ -26,4 +26,5 @@ include /etc/sway/config.d/*
 # * qutebrowser
 #   * https://github.com/theova/base16-qutebrowser/blob/main/themes/default/base16-oceanicnext.config.py
 #   * export XDG_SESSION_TYPE=wayland 
-#   * export GDK_BACKEND=wayland
+#   * export GDK_BACKEND=wayland   ???
+#   * export QT_WAYLAND_DISABLE_WINDOWDECORATION=1   ???
