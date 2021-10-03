@@ -1,0 +1,22 @@
+font=monospace 12
+width=350
+padding=5
+
+icons=1
+markup=1
+actions=0
+default-timeout=4000
+
+background-color=#1B2B34
+text-color=#C0C5CE
+border-color=#6699CC
+
+[urgency=low]
+background-color=#1B2B34
+text-color=#FAC863
+border-color=#6699CC
+
+[urgency=high]
+background-color=#1B2B34
+text-color=#EC5f67
+border-color=#6699CC

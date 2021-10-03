@@ -6,7 +6,8 @@ My Wayland-based environment setup.
 ## Environment
 
 ```
-$ sudo pacman -S sway swaylock alacritty brightnessctl wl-clipboard grim slurp
+$ sudo pacman -S sway swaylock alacritty brightnessctl wl-clipboard grim \
+  slurp libnotify mako
 ```
 
 
