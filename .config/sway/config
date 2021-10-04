@@ -13,16 +13,12 @@ include /etc/sway/config.d/*
 # * test hdmi and set the max available resolution there
 # * keybinds to send a workspace to another output
 # * passmenu: persist the password in memory after copying
-# * sfeed - drop it from the suckless repo
 # * image viewer
 #   * https://github.com/eXeC64/imv
 #   * https://github.com/occivink/mpv-image-viewer
 # * pinentry
 #   * open a floating terminal with the tty pinentry?
 # * sudo askpass
-# * app launchers
-#   * rssfeed
-#   * sfeed_update
 # * qutebrowser
 #   * https://github.com/theova/base16-qutebrowser/blob/main/themes/default/base16-oceanicnext.config.py
 #   * export XDG_SESSION_TYPE=wayland 
