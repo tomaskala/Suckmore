@@ -13,9 +13,6 @@ include /etc/sway/config.d/*
 # * test hdmi and set the max available resolution there
 # * keybinds to send a workspace to another output
 # * passmenu: persist the password in memory after copying
-# * image viewer
-#   * https://github.com/eXeC64/imv
-#   * https://github.com/occivink/mpv-image-viewer
 # * pinentry
 #   * open a floating terminal with the tty pinentry?
 # * sudo askpass
