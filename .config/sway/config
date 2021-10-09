@@ -1,3 +1,4 @@
+xwayland disable
 exec mako
 exec pactl set-source-volume @DEFAULT_SOURCE@ 40%
 
