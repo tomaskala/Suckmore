@@ -11,6 +11,5 @@ include /etc/sway/config.d/*
 
 # TODO
 # * fix discord on wayland (and other apps) -- seems impossible atm?
-# * test hdmi and set the max available resolution there
 # * keybinds to send a workspace to another output
 # * passmenu: persist the password in memory after copying
