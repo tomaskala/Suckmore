@@ -3,6 +3,12 @@
 My Wayland-based environment setup.
 
 
+## Setup
+
+* Run the `setup.sh` installation script after installing the dependencies
+  listed below.
+
+
 ## Environment
 
 ```
@@ -10,17 +16,17 @@ $ sudo pacman -S sway swaylock alacritty
 ```
 
 
-## Utilities
-
-```
-$ sudo pacman -S brightnessctl grim slurp wl-clipboard libnotify mako
-```
-
-
 ## Pipewire
 
 ```
 $ sudo pacman -S pipewire pipewire-pulse pamixer
+```
+
+
+## Utilities
+
+```
+$ sudo pacman -S brightnessctl grim slurp wl-clipboard libnotify mako
 ```
 
 
@@ -33,7 +39,7 @@ Add the following configuration to the following files.
   export TERMINAL='alacritty'
 
   if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-    exec sway
+    ssh-agent sway
   fi
   ```
 * `~/.gnupg/gpg-agent.conf`
