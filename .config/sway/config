@@ -1,6 +1,7 @@
 xwayland disable
 exec mako
 exec pactl set-source-volume @DEFAULT_SOURCE@ 40%
+exec wl-paste -t text --watch sway-clipman
 
 include ~/.config/sway/config.d/general.conf
 include ~/.config/sway/config.d/colorscheme.conf
@@ -8,6 +9,3 @@ include ~/.config/sway/config.d/bindings.conf
 include ~/.config/sway/config.d/status.conf
 include ~/.config/sway/config.d/output.conf
 include /etc/sway/config.d/*
-
-# TODO
-# * passmenu: persist the password in memory after copying

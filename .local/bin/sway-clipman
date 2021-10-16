@@ -1,0 +1,27 @@
+#!/bin/sh
+
+clipstore="${CLIPSTORE:-${HOME}/.local/share/clipstore}"
+lastclip=""
+
+die() {
+  printf '%s\n' "$1" >&2
+  exit 1
+}
+
+if [ ! -e "${clipstore}" ]; then
+  mkdir -p "${clipstore}"
+else
+  if [ ! -d "${clipstore}" ]; then
+    die "${clipstore} must be a directory."
+  fi
+fi
+
+if [ -f "${clipstore}/clipdump" ]; then
+  lastclip="$(cat "${clipstore}/clipdump")"
+fi
+
+text="$(cat /dev/stdin)"
+[ -z "${text}" ] && exit 0
+[ "${text}" = "${lastclip}" ] && exit 0
+printf '%s' "${text}" > "${clipstore}/clipdump"
+printf '%s' "${text}" | wl-copy -t TEXT &
