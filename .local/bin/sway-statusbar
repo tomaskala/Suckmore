@@ -9,11 +9,11 @@ render() {
   current_time=$(date +'%H:%M')
 
   if [ "${bat_charging}" = Charging ]; then
-    bat_status='🔌'
+    bat_status='⚡'
   elif [ "${bat_charging}" = Discharging ]; then
     bat_status='🔋'
   else
-    bat_status='⚡'
+    bat_status='🔌'
   fi
 
   if [ "${muted}" = true ]; then
