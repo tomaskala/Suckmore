@@ -1,18 +1,22 @@
 #!/bin/sh
 
 render() {
-  wg_on=$(ip link | grep wg0)
   muted=$(pamixer --get-mute)
   vol_perc=$(pamixer --get-volume)
   bat_charging=$(cat /sys/class/power_supply/BAT0/status)
   bat_perc=$(cat /sys/class/power_supply/BAT0/capacity)
   current_date=$(date +'%a %F')
   current_time=$(date +'%H:%M')
+  wg_on=$(ip link | grep wg0)
 
-  if [ -n "${wg_on}" ]; then
-    wg_status='🔐'
+  if [ "${muted}" = true ]; then
+    vol_status='🔇'
+  elif [ "${vol_perc}" -le 30 ]; then
+    vol_status='🔈'
+  elif [ "${vol_perc}" -le 70 ]; then
+    vol_status='🔉'
   else
-    wg_status='🔓'
+    vol_status='🔊'
   fi
 
   if [ "${bat_charging}" = Charging ]; then
@@ -23,14 +27,10 @@ render() {
     bat_status='🔌'
   fi
 
-  if [ "${muted}" = true ]; then
-    vol_status='🔇'
-  elif [ "${vol_perc}" -le 30 ]; then
-    vol_status='🔈'
-  elif [ "${vol_perc}" -le 70 ]; then
-    vol_status='🔉'
+  if [ -n "${wg_on}" ]; then
+    wg_status='🔐'
   else
-    vol_status='🔊'
+    wg_status='🔓'
   fi
 
   printf '%s %d%% %s %d%% 📅 %s 🕓 %s %s\n' \
