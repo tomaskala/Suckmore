@@ -1,7 +1,6 @@
 xwayland disable
 exec mako
 exec pactl set-source-volume @DEFAULT_SOURCE@ 40%
-exec wl-paste -t text --watch sway-clipman
 
 include ~/.config/sway/config.d/general.conf
 include ~/.config/sway/config.d/colorscheme.conf
