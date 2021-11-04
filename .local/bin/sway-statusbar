@@ -7,7 +7,7 @@ render() {
   bat_perc=$(cat /sys/class/power_supply/BAT0/capacity)
   current_date=$(date +'%a %F')
   current_time=$(date +'%H:%M')
-  wg_on=$(ip link | grep wg0)
+  wg_on=$(ip link | grep -F wg0)
 
   if [ "${muted}" = true ]; then
     vol_status='🔇'
