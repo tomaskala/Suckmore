@@ -44,7 +44,7 @@ Add the following configuration to the following files.
   ```
 * `~/.gnupg/gpg-agent.conf`
   ```
-  pinentry-program /usr/local/bin/pinentry-tty
+  pinentry-program /usr/local/bin/pinentry-curses
   ```
 * `~/.config/tmux/tmux.conf`
   ```
