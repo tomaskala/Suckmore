@@ -1,4 +1,4 @@
-env: 
+env:
   TERM: xterm-256color
 
 window:
@@ -6,29 +6,29 @@ window:
     x: 2
     y: 2
 
-font: 
-  normal: 
+font:
+  normal:
     family: monospace
     style: Regular
-  bold: 
+  bold:
     family: monospace
     style: Bold
-  italic: 
+  italic:
     family: monospace
     style: Italic
-  bold_italic: 
+  bold_italic:
     family: monospace
     style: Bold Italic
   size: 16
 
-colors: 
-  primary: 
+colors:
+  primary:
     background: '#1B2B34'
     foreground: '#C0C5CE'
-  cursor: 
+  cursor:
     text: '#1B2B34'
     cursor: '#C0C5CE'
-  normal: 
+  normal:
     black: '#1B2B34'
     red: '#EC5F67'
     green: '#99C794'
@@ -37,7 +37,7 @@ colors:
     magenta: '#C594C5'
     cyan: '#5FB3B3'
     white: '#C0C5CE'
-  bright: 
+  bright:
     black: '#65737E'
     red: '#EC5F67'
     green: '#99C794'
