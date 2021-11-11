@@ -9,6 +9,16 @@ render() {
   current_time=$(date +'%H:%M')
   wg_on=$(ip link | grep -F wg0)
 
+  if pgrep -x mpd > /dev/null; then
+    music="$(mpc -f '%artist% - %title%' current)"
+  else
+    music=""
+  fi
+
+  if [ -n "${music}" ]; then
+    music="🎵 ${music}"
+  fi
+
   if [ "${muted}" = true ]; then
     vol_status='🔇'
   elif [ "${vol_perc}" -le 30 ]; then
@@ -33,7 +43,8 @@ render() {
     wg_status='🔓'
   fi
 
-  printf '%s %d%% %s %d%% 📅 %s 🕓 %s %s\n' \
+  printf '%s %s %d%% %s %d%% 📅 %s 🕓 %s %s\n' \
+    "${music}" \
     "${vol_status}" \
     "${vol_perc}" \
     "${bat_status}" \
