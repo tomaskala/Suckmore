@@ -42,10 +42,6 @@ Add the following configuration to the following files.
     ssh-agent sway
   fi
   ```
-* `~/.gnupg/gpg-agent.conf`
-  ```
-  pinentry-program /usr/local/bin/pinentry-curses
-  ```
 * `~/.config/tmux/tmux.conf`
   ```
   bind -T copy-mode-vi y send -X copy-pipe-and-cancel "wl-copy"
