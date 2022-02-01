@@ -12,7 +12,7 @@ My Wayland-based environment setup.
 ## Environment
 
 ```
-$ sudo pacman -S sway swaylock alacritty
+$ sudo pacman -S sway swaylock foot
 ```
 
 
@@ -36,7 +36,7 @@ Add the following configuration to the following files.
 
 * `~/.bash_profile`
   ```
-  export TERMINAL='alacritty'
+  export TERMINAL='foot'
 
   if [ -z "${WAYLAND_DISPLAY}" ] && [ -z "${DISPLAY}" ] && [ "$(tty)" = "/dev/tty1" ]; then
     ssh-agent sway
