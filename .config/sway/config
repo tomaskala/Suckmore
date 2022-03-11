@@ -5,6 +5,5 @@ exec pactl set-source-volume @DEFAULT_SOURCE@ 40%
 include ~/.config/sway/config.d/general.conf
 include ~/.config/sway/config.d/colorscheme.conf
 include ~/.config/sway/config.d/bindings.conf
-include ~/.config/sway/config.d/status.conf
 include ~/.config/sway/config.d/output.conf
 include /etc/sway/config.d/*
