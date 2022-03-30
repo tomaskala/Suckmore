@@ -1,8 +1,6 @@
 #!/bin/sh
 set -eu
 
-GLOBIGNORE=".:..:.git:.gitignore"
-
 install_dotfile() {
   dotfile="$1"
   dest="${HOME}/${dotfile}"
@@ -15,6 +13,12 @@ install_dotfile() {
 }
 
 for dotfiles_source in .*; do
+  if [ "${dotfiles_source}" = '.' ] \
+    || [ "${dotfiles_source}" = '..' ] \
+    || [ "${dotfiles_source#.git}" != "${dotfiles_source}" ]; then
+    continue
+  fi
+
   find "${dotfiles_source}" -type f | sort | while read -r dotfile; do
     install_dotfile "${dotfile}"
   done
