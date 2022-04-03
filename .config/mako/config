@@ -7,9 +7,9 @@ markup=1
 actions=0
 default-timeout=4000
 
-background-color=#1A212E
-text-color=#D9E0EE
-border-color=#D9E0EE
+background-color=#161821
+text-color=#d9e0ee
+border-color=#c6c8d1
 
 [urgency=high]
-border-color=#F65866
+border-color=#e27878
