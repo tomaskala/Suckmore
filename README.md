@@ -14,6 +14,7 @@ My Wayland-based environment setup.
 ```
 # pacman -S sway swaylock foot
 # usermod -aG seat "$(logname)"
+# systemctl enable seatd.service
 ```
 
 ## Pipewire
