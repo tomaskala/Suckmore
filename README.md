@@ -12,21 +12,20 @@ My Wayland-based environment setup.
 ## Environment
 
 ```
-$ sudo pacman -S sway swaylock foot
+# pacman -S sway swaylock foot
 ```
-
 
 ## Pipewire
 
 ```
-$ sudo pacman -S pipewire pipewire-pulse pamixer
+# pacman -S pipewire pipewire-pulse pamixer
 ```
 
 
 ## Utilities
 
 ```
-$ sudo pacman -S brightnessctl grim slurp wl-clipboard libnotify mako
+# pacman -S brightnessctl grim slurp wl-clipboard libnotify mako
 ```
 
 
