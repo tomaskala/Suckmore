@@ -7,17 +7,6 @@ render() {
   bat_perc=$(cat /sys/class/power_supply/BAT0/capacity)
   current_date=$(date +'%a %F')
   current_time=$(date +'%H:%M')
-  wg_on=$(ip link | grep -F wg0)
-
-  if pgrep -x mpd > /dev/null; then
-    music="$(mpc -f '%artist% - %title%' current)"
-  else
-    music=""
-  fi
-
-  if [ -n "${music}" ]; then
-    music="🎵 ${music}"
-  fi
 
   if [ "${muted}" = true ]; then
     vol_status='🔇'
@@ -37,21 +26,13 @@ render() {
     bat_status='🔌'
   fi
 
-  if [ -n "${wg_on}" ]; then
-    wg_status='🔐'
-  else
-    wg_status='🔓'
-  fi
-
-  printf '%s %s %d%% %s %d%% 📅 %s 🕓 %s %s\n' \
-    "${music}" \
+  printf '%s %d%% %s %d%% 📅 %s 🕓 %s\n' \
     "${vol_status}" \
     "${vol_perc}" \
     "${bat_status}" \
     "${bat_perc}" \
     "${current_date}" \
-    "${current_time}" \
-    "${wg_status}"
+    "${current_time}"
 }
 
 trap render USR1
