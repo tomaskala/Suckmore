@@ -12,4 +12,6 @@ text-color=#cccccc
 border-color=#3b78ff
 
 [urgency=high]
+background-color=#e74856
+text-color=#0c0c0c
 border-color=#c50f1f
