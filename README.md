@@ -5,7 +5,7 @@ My Wayland-based environment setup.
 
 ## Setup
 
-* Run the `setup.sh` installation script after installing the dependencies
+- Run the `setup.sh` installation script after installing the dependencies
   listed below.
 
 
