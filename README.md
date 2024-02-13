@@ -27,5 +27,5 @@ My Wayland-based environment setup.
 ## Utilities
 
 ```
-# pacman -S brightnessctl grim slurp wl-clipboard libnotify mako
+# pacman -S brightnessctl grim slurp wl-clipboard libnotify mako zathura zathura-djvu zathura-ps zathura-pdf-mupdf
 ```
