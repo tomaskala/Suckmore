@@ -1,6 +1,11 @@
 xwayland disable
 exec mako
-exec pactl set-source-volume @DEFAULT_SOURCE@ 40%
+
+# Microphone volume
+exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 100%
+
+# Speaker volume
+exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 40%
 
 include ~/.config/sway/config.d/general.conf
 include ~/.config/sway/config.d/colorscheme.conf
