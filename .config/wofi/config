@@ -1,0 +1,7 @@
+allow_images=true
+allow_markup=true
+term=foot
+matching=fuzzy
+insensitive=true
+parse_search=true
+no_actions=true

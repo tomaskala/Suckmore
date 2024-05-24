@@ -2,17 +2,26 @@
 
 My Wayland-based environment setup.
 
-
 ## Setup
 
 - Run the `setup.sh` installation script after installing the dependencies
   listed below.
+- Enable SSH agent
+  ```
+  $ systemctl --user enable ssh-agent.service
+  ```
 
-
-## Environment
+## Display manager
 
 ```
-# pacman -S sway swaylock foot
+# pacman -S lightdm lightdm-gtk-greeter
+# systemctl enable lightdm.service
+```
+
+## Session
+
+```
+# pacman -S sway swaybg swaylock i3status grim slurp wl-clipboard libnotify mako wofi
 ```
 
 ## Pipewire
@@ -21,9 +30,14 @@ My Wayland-based environment setup.
 # pacman -S pipewire pipewire-pulse wireplumber
 ```
 
+## Programs
+
+```
+# pacman -S foot zathura zathura-djvu zathura-ps zathura-pdf-mupdf
+```
 
 ## Utilities
 
 ```
-# pacman -S brightnessctl grim slurp wl-clipboard libnotify mako zathura zathura-djvu zathura-ps zathura-pdf-mupdf
+# pacman -S brightnessctl xdg-desktop-portal xdg-desktop-portal-wlr xdg-desktop-portal-gtk
 ```

@@ -1,14 +1,225 @@
-xwayland disable
+# {{{ Autostart
+
+# Include system-level configuration, needed for xdg-desktop-portal to work.
+include /etc/sway/config.d/*
+
+output * bg ~/.local/share/wallpaper fill
 exec mako
 
-# Microphone volume
-exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 100%
+# Microphone volume.
+exec wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 60%
 
 # Speaker volume
 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 40%
 
-include ~/.config/sway/config.d/general.conf
-include ~/.config/sway/config.d/colorscheme.conf
-include ~/.config/sway/config.d/bindings.conf
-include ~/.config/sway/config.d/output.conf
-include /etc/sway/config.d/*
+# }}}
+# {{{ General configuration
+
+xwayland disable
+
+font pango:monospace 10
+
+focus_follows_mouse no
+
+default_border none
+default_floating_border none
+
+gaps inner 10
+smart_gaps inverse_outer
+
+for_window [class="calc"] floating enable
+
+set $mod   Mod4
+set $up    k
+set $down  j
+set $left  h
+set $right l
+
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws10 "10"
+
+# Configure the touchpad.
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+}
+
+# }}}
+# {{{ Keybindings
+
+# Start a terminal.
+bindsym $mod+Return exec foot
+
+# Kill the focused window.
+bindsym $mod+Shift+q kill
+
+# Start the application launcher.
+bindsym $mod+space exec wofi --show drun
+
+# Use Mouse+$mod to drag floating windows.
+floating_modifier $mod normal
+
+# Restart sway in place (preserves the layout/session, can be used to upgrade sway).
+bindsym $mod+Shift+r reload
+
+# Exit sway.
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Yes' 'swaymsg exit'
+
+# Lock sway.
+bindsym $mod+Shift+x exec swaylock -c 000000
+
+# Move the focus.
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window.
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Switch to a workspace.
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move the focused container to a workspace.
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Move the focused container to an output.
+bindsym $mod+Up move workspace to output up
+bindsym $mod+Right move workspace to output right
+bindsym $mod+Down move workspace to output down
+bindsym $mod+Left move workspace to output left
+
+# Set the next split to be horizontal or vertical.
+bindsym $mod+BackSpace split toggle
+
+# Toggle fullscreen.
+bindsym $mod+m fullscreen toggle
+
+# Swap focus between the floating and tiling modes.
+bindsym $mod+f focus mode_toggle
+
+# Toggle between the floating and tiling modes.
+bindsym $mod+Shift+f floating toggle
+
+# Audio volume.
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1.2 @DEFAULT_AUDIO_SINK@   5%+    && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec wpctl set-volume        @DEFAULT_AUDIO_SINK@   5%-    && killall -SIGUSR1 i3status
+bindsym XF86AudioMute        exec wpctl set-mute          @DEFAULT_AUDIO_SINK@   toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioMicMute     exec wpctl set-mute          @DEFAULT_AUDIO_SOURCE@ toggle && killall -SIGUSR1 i3status
+
+# Brightness.
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+bindsym XF86MonBrightnessUp   exec brightnessctl set +10%
+
+# Screenshot.
+bindsym Print exec grim -t jpeg ~/Pictures/$(date --iso-8601=seconds).jpg
+bindsym Shift+Print exec grim -t jpeg -g "$(slurp)" ~/Pictures/$(date --iso-8601=seconds).jpg
+
+# Notifications.
+bindsym $mod+n exec makoctl dismiss
+bindsym $mod+Shift+n exec makoctl dismiss -a
+
+# Launch calculator.
+bindsym $mod+c exec foot -a calc bc -l -q
+
+# Resize mode.
+mode "resize" {
+  bindsym $left resize shrink width 10 px
+  bindsym $down resize grow height 10 px
+  bindsym $up resize shrink height 10 px
+  bindsym $right resize grow width 10 px
+
+  # Return to the default mode.
+  bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# }}}
+# {{{ Colorscheme
+
+set $base00 #222436
+set $base01 #1e2030
+set $base02 #2d3f76
+set $base03 #636da6
+set $base04 #828bb8
+set $base05 #3b4261
+set $base06 #828bb8
+set $base07 #c8d3f5
+set $base08 #ff757f
+set $base09 #ffc777
+set $base0A #ffc777
+set $base0B #c3e88d
+set $base0C #86e1fc
+set $base0D #82aaff
+set $base0E #fca7ea
+set $base0F #c53b53
+
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D   $base0C
+client.focused_inactive $base01 $base01 $base05 $base03   $base01
+client.unfocused        $base01 $base00 $base05 $base01   $base01
+client.urgent           $base08 $base08 $base00 $base08   $base08
+client.placeholder      $base00 $base00 $base05 $base00   $base00
+client.background       $base07
+
+bar {
+  tray_output *
+  position top
+  height 32px
+  workspace_min_width 32px
+  status_command i3status
+  separator_symbol |
+
+  colors {
+    background $base00
+    separator  $base01
+    statusline $base04
+
+    # State             Border  BG      Text
+    focused_workspace   $base05 $base0D $base00
+    active_workspace    $base05 $base03 $base00
+    inactive_workspace  $base03 $base01 $base05
+    urgent_workspace    $base08 $base08 $base00
+    binding_mode        $base00 $base0A $base00
+  }
+}
+
+# }}}
+# {{{ Output configuration
+
+# Set the resolution and position for the laptop screen (bottom).
+output eDP-1 resolution 1920x1080 position 320 1440
+
+# Set the resolution and position for the HDMI screen (top).
+output HDMI-A-1 resolution 2560x1440 position 0 0
+
+# }}}
